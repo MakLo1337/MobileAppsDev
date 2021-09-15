@@ -87,10 +87,7 @@ public class addeditUser extends AppCompatActivity {
             toolbar2.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    String name = nameInput.getText().toString().trim();
-                    int age = Integer.parseInt(ageInput.getText().toString().trim());
-                    String address = addressInput.getText().toString().trim();
-                    Orang orangBaru = new Orang(name, address, age);
+                    Orang orangBaru = MainActivity.userData.get(pos);
                     Intent intent = new Intent(getBaseContext(), ProfileActivity.class);
                     intent.putExtra("position", pos);
                     intent.putExtra("editOrang", orangBaru);
